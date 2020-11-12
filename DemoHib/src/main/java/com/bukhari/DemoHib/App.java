@@ -19,7 +19,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        Student student = new Student(1,"Sameer", "Ahmed", 22);
+        Student student = null;
     	
         
         Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class);
@@ -33,11 +33,11 @@ public class App
         Transaction tx = session.beginTransaction();
         
         
-        // To save the Data into the Database
-        session.save(student);
+        // To fetch the Data from the Database
+        student = (Student) session.get(Student.class, 1);
         // To cmmit changes
         tx.commit();
         
-       
+       System.out.println(student);
     }
 }
