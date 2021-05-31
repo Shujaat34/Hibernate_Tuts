@@ -1,1 +1,1 @@
-# Hibernate_Tuts
+# Hibernate_Skeleton
